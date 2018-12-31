@@ -1,0 +1,2 @@
+"Faster subsequent page-loads by prefetching in-viewport links during idle time.","Les chargements de page ultérieurs plus rapides en effectuant une pré-extraction des liens dans la fenêtre d'affichage pendant la période d'inactivité."
+"Defaults to 2 seconds (e.g. 2000)","La valeur par défaut est 2 secondes (par exemple 2000)."

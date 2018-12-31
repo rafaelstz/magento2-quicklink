@@ -1,0 +1,2 @@
+"Faster subsequent page-loads by prefetching in-viewport links during idle time.","Carregue as próximas páginas rapidamente, fazendo a pré-busca de links durante o tempo ocioso."
+"Defaults to 2 seconds (e.g. 2000)","Padrão de 2 segundos (ex. 2000)"
