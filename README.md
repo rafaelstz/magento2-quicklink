@@ -28,7 +28,7 @@ Magento 2 Quicklink module attempts to make navigations to subsequent pages load
 Install using [Composer](https://getcomposer.org).
 
 ```
-composer require rafaelstz/quicklink-magento2:dev-master
+composer require rafaelcg/quicklink-magento2
 php bin/magento setup:static-content:deploy -f
 php bin/magento cache:clean
 ```
