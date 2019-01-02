@@ -1,5 +1,5 @@
 {
-    "name": "rafaelcg/magento2-quicklink",
+    "name": "rafaelcg/quicklink-magento2",
     "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time",
     "require": {
         "php": "~5.6.0|~7.0.0|~7.1.0|~7.2.0",
