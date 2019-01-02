@@ -9,7 +9,7 @@
 #### Faster subsequent page-loads by prefetching in-viewport links during idle time
 
 <p align="center">  
-  <a href="https://packagist.org/packages/rafaelstz/quicklink-magento2"><img src="https://img.shields.io/packagist/dt/rafaelstz/quicklink-magento2.svg" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/rafaelcg/quicklink-magento2"><img src="https://img.shields.io/packagist/dt/rafaelcg/quicklink-magento2.svg" alt="Total Downloads"></a>
 </p>
 
 ## How it works
