@@ -8,13 +8,9 @@
 
 #### Faster subsequent page-loads by prefetching in-viewport links during idle time
 
-<p align="center">  
-  <a href="https://packagist.org/packages/rafaelcg/quicklink-magento2"><img src="https://img.shields.io/packagist/dt/rafaelcg/quicklink-magento2.svg" alt="Total Downloads"></a>
-</p>
+## How does it works?
 
-## How it works
-
-Magento 2 Quicklink module attempts to make navigations to subsequent pages load faster. It:
+Magento 2 Quicklink module attempts to make navigations to subsequent pages load faster.
 
 * **Detects links within the viewport** (using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API))
 * **Waits until the browser is idle** (using [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback))
