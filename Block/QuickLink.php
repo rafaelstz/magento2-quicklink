@@ -8,7 +8,7 @@
 namespace Rafaelcg\QuickLink\Block;
 
 use Magento\Framework\View\Element\Template;
-use Rafaelcg\Quicklink\Helper\Data;
+use Rafaelcg\QuickLink\Helper\Data;
 
 /**
  * Class QuickLink
