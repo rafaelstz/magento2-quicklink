@@ -1,27 +1,22 @@
 <?php
 /**
- * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2018
- *  @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
+ *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+ *  @copyright Copyright (c) 2019.
  */
 
-namespace Rafaelcg\QuickLink\Block;
+namespace Rafaelcg\Quicklink\Block;
 
 use Magento\Framework\View\Element\Template;
-use Rafaelcg\QuickLink\Helper\Data;
+use Rafaelcg\Quicklink\Helper\Data;
 
 /**
- * Class QuickLink
+ * Class Quicklink
  *
- * @package Rafaelcg\QuickLink\Block
+ * @package Rafaelcg\Quicklink\Block
  */
-class QuickLink extends Template
+class Quicklink extends Template
 {
-    /**
-     * Path to check if it's enabled
-     */
-    const XML_PATH_ACTIVE = 'web/quicklink/active';
-    const XML_PATH_TIMEOUT = 'web/quicklink/timeout';
+
     /**
      * @var Template\Context
      */
@@ -60,8 +55,30 @@ class QuickLink extends Template
      */
     public function initConfig()
     {
+        $initConfig = [];
         $timeout = $this->helper->getTimeout();
-        return json_encode(['timeout' => $timeout]);
+        $requestLimit = $this->helper->getRequestLimit();
+        $concurrencyLimit = $this->helper->getConcurrencyLimit();
+        $priority = $this->helper->getPriority();
+
+        if ($timeout) {
+            $initConfig['timeout'] = $timeout;
+        }
+        if ($requestLimit) {
+            $initConfig['limit'] = $requestLimit;
+        }
+        if ($concurrencyLimit) {
+            $initConfig['throttle'] = $concurrencyLimit;
+        }
+        if ($timeout) {
+            $initConfig['timeout'] = $timeout;
+        }
+        if ($priority) {
+            $initConfig['priority'] = $priority;
+        }
+        return json_encode(
+            $initConfig
+        );
     }
 
     /**

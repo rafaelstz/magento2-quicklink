@@ -1,25 +1,63 @@
-<?xml version="1.0"?>
-<!--
-  ~ @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
-  ~  @copyright Copyright (c) 2018
-  ~  @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
+<?xml version="1.0"?><!--
+  ~  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+  ~  @copyright Copyright (c) 2019
   -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="web" translate="label" type="text" sortOrder="950" showInDefault="1" showInWebsite="1" showInStore="1">
-            <group id="quicklink" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <tab id="rafaelcg" translate="label" sortOrder="900">
+            <label>Rafaelcg Extensions</label>
+        </tab>
+        <section id="quicklink" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Google Quicklink</label>
+            <tab>rafaelcg</tab>
+            <resource>Rafaelcg_Quicklink::config</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
                 <label>Google Quicklink</label>
-                <comment>Faster subsequent page-loads by prefetching in-viewport links during idle time.</comment>
-                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <comment><![CDATA[
+                Faster subsequent page-loads by prefetching in-viewport links during idle time.<br>
+                If you have any issue, please <a title="report issue" target="_blank" href="https://github.com/rafaelstz/magento2-quicklink/issues">report here</a>.]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="timeout" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="timeout" translate="label comment" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Timeout</label>
-                    <comment>Defaults to 2 seconds (e.g. 2000)</comment>
+                    <comment>Timeout limit in milliseconds.</comment>
                     <depends>
                         <field id="*/*/active">1</field>
                     </depends>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="request_limit" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Request limit</label>
+                    <comment>The total requests that can be prefetched.</comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="concurrency_limit" translate="label comment" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Throttle</label>
+                    <comment>The concurrency limit for simultaneous requests.</comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="priority" translate="label comment" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>High Priority</label>
+                    <comment>Whether or not the URLs should be treated as high priority.</comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
         </section>

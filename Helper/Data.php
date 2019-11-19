@@ -1,11 +1,10 @@
 <?php
 /**
- * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2018
- *  @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
+ *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+ *  @copyright Copyright (c) 2019.
  */
 
-namespace Rafaelcg\QuickLink\Helper;
+namespace Rafaelcg\Quicklink\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\ScopeInterface;
@@ -13,46 +12,76 @@ use Magento\Store\Model\ScopeInterface;
 /**
  * Class Data
  *
- * @package Rafaelcg\QuickLink\Helper
+ * @package Rafaelcg\Quicklink\Helper
  */
 class Data extends AbstractHelper
 {
     /**
      * Config paths for using throughout the code
      */
-    const XML_PATH_ACTIVE = 'web/quicklink/active';
-
-    const XML_PATH_TIMEOUT = 'web/quicklink/timeout';
-
-    const XML_PATH_URLs = 'web/quicklink/urls';
-
-    const XML_PATH_PRIORITY = 'web/quicklink/priority';
-
+    const XML_PATH_ACTIVE = 'quicklink/general/active';
+    const XML_PATH_TIMEOUT = 'quicklink/general/timeout';
+    const XML_PATH_REQUEST_LIMIT = 'quicklink/general/request_limit';
+    const XML_PATH_CONCURRENCY_LIMIT = 'quicklink/general/concurrency_limit';
+    const XML_PATH_PRIORITY = 'quicklink/general/priority';
 
     /**
      * Get config
      *
-     * @param string $path
+     * @param  string $path
+     * @param  null   $scopeCode
      * @return mixed
      */
-    public function getConfig($path)
+    public function getConfig($path, $scopeCode = null)
     {
-        return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
+        $config = $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE, $scopeCode);
+        return !empty($config) ? $config : false;
     }
 
     /**
+     * Get timeout
+     *
      * @return int|mixed
      */
-    public function getTimeout(){
-        $configTimeout = $this->getConfig(self::XML_PATH_TIMEOUT);
-        $timeout = !empty($configTimeout) ? $configTimeout : 4000;
-        return $timeout;
+    public function getTimeout()
+    {
+        return $this->getConfig(self::XML_PATH_TIMEOUT);
+    }
+
+    /**
+     * Get request limit
+     *
+     * @return int|mixed
+     */
+    public function getRequestLimit()
+    {
+        return $this->getConfig(self::XML_PATH_REQUEST_LIMIT);
+    }
+
+    /**
+     * Get concurrency limit
+     *
+     * @return int|mixed
+     */
+    public function getConcurrencyLimit()
+    {
+        return $this->getConfig(self::XML_PATH_CONCURRENCY_LIMIT);
+    }
+
+    /**
+     * Get the priority
+     *
+     * @return int|mixed
+     */
+    public function getPriority()
+    {
+        return $this->getConfig(self::XML_PATH_PRIORITY);
     }
 
     /**
      * Whether Quicklink is ready to use
      *
-     * @param string $store
+     * @param  string $store
      * @return bool
      */
     public function isQuicklinkEnabled($store = null)

@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <!--
-  ~ /**
-  ~  *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
-  ~  *  @copyright Copyright (c) 2018
-  ~  *  @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
-  ~  */
+  ~  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+  ~  @copyright Copyright (c) 2019.
   -->
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="head.additional">
-            <block class="Rafaelcg\QuickLink\Block\QuickLink" name="quicklink" as="quicklink" template="Rafaelcg_QuickLink::quicklink.phtml"/>
+        <referenceContainer name="before.body.end">
+            <block class="Rafaelcg\Quicklink\Block\Quicklink" name="quicklink" as="quicklink" template="Rafaelcg_Quicklink::quicklink.phtml"/>
         </referenceContainer>
     </body>
 </page>

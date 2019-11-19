@@ -1,18 +1,19 @@
 <?php
 /**
  * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2018
- *  @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
+ * @copyright Copyright (c) 2019.
  */
 
 ?>
-<?php /** @var $this \Rafaelcg\QuickLink\Block\QuickLink */ ?>
-<!-- BEGIN Google QuickLink -->
+<?php /** @var $block \Rafaelcg\Quicklink\Block\QuickLink */ ?>
+<!-- Google Quicklink -->
 <script type="text/x-magento-init">
 {
     "*": {
-        "Rafaelcg_QuickLink/js/m2-quicklink": <?= $this->initConfig() ?>
+        "Rafaelcg_Quicklink/js/quicklink": {
+            "listen": <?= $block->initConfig() ?>
+        }
     }
 }
+
 </script>
-<!-- END Google QuickLink -->

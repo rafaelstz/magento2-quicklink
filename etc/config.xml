@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <!--
-  ~ @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
-  ~  @copyright Copyright (c) 2018
-  ~  @license https://opensource.org/licenses/OSL-3.0.php Open Software License 3.0
+  ~  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+  ~  @copyright Copyright (c) 2019.
   -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <web>
-            <quicklink>
+        <quicklink>
+            <general>
                 <active>1</active>
                 <timeout>2000</timeout>
-            </quicklink>
-        </web>
+                <priority>0</priority>
+            </general>
+        </quicklink>
     </default>
 </config>
