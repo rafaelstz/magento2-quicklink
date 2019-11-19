@@ -76,9 +76,8 @@ class Quicklink extends Template
         if ($priority) {
             $initConfig['priority'] = $priority;
         }
-        return json_encode(
-            $initConfig
-        );
+
+        return json_encode($initConfig);
     }
 
     /**
@@ -91,3 +90,4 @@ class Quicklink extends Template
         return !$this->helper->isQuicklinkEnabled() ? '' : parent::_toHtml();
     }
 }
+
