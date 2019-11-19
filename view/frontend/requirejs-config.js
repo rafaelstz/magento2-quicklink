@@ -6,7 +6,7 @@
 var config = {
     map: {
         '*': {
-            quicklink: 'https://unpkg.com/quicklink@2.0.0-alpha/dist/quicklink.umd.js',
+            quicklink: 'Rafaelcg_Quicklink/js/quicklink.umd',
             polyfillio: 'https://polyfill.io/v2/polyfill.umd.js?features=IntersectionObserver'
         }
     }
