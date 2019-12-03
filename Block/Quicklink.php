@@ -7,7 +7,7 @@
 namespace Rafaelcg\Quicklink\Block;
 
 use Magento\Framework\View\Element\Template;
-use Rafaelcg\Quicklink\Helper\Data;
+use Rafaelcg\Quicklink\Model\Helper\Data;
 
 /**
  * Class Quicklink
@@ -70,14 +70,11 @@ class Quicklink extends Template
         if ($concurrencyLimit) {
             $initConfig['throttle'] = $concurrencyLimit;
         }
-        if ($timeout) {
-            $initConfig['timeout'] = $timeout;
-        }
         if ($priority) {
             $initConfig['priority'] = $priority;
         }
 
-        return json_encode($initConfig);
+        return ($initConfig);
     }
 
     /**
