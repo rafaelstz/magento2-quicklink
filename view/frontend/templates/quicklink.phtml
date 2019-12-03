@@ -3,17 +3,26 @@
  * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
  * @copyright Copyright (c) 2019.
  */
-
+/** @var $block \Rafaelcg\Quicklink\Block\QuickLink */
+/** @var $viewModel \Rafaelcg\Quicklink\ViewModel\QuickLink */
+$viewModel = $block->getViewModel();
 ?>
-<?php /** @var $block \Rafaelcg\Quicklink\Block\QuickLink */ ?>
 <!-- Google Quicklink -->
-<script type="text/x-magento-init">
-{
-    "*": {
-        "Rafaelcg_Quicklink/js/quicklink": {
-            "listen": <?= $block->initConfig() ?>
-        }
-    }
-}
-
+<script defer>
+    require(['jquery', 'quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
+        quicklink.listen({
+            <?= $viewModel->getTimeout() ?>
+            <?= $viewModel->getLimit() ?>
+            <?= $viewModel->getConcurrencyLimit() ?>
+            <?= $viewModel->getPriority() ?>
+            ignores: [
+                /\/api\/?/,
+                uri => uri.includes('#'),
+                uri => uri.includes('logout'),
+                uri => uri.includes('account'),
+                uri => uri.includes('checkout'),
+                (uri, elem) => elem.hasAttribute('noprefetch')
+            ]
+        });
+    });
 </script>

@@ -4,7 +4,7 @@
  *  @copyright Copyright (c) 2019.
  */
 
-namespace Rafaelcg\Quicklink\Helper;
+namespace Rafaelcg\Quicklink\Model\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\ScopeInterface;
@@ -12,7 +12,7 @@ use Magento\Store\Model\ScopeInterface;
 /**
  * Class Data
  *
- * @package Rafaelcg\Quicklink\Helper
+ * @package Rafaelcg\Quicklink\Model\Helper
  */
 class Data extends AbstractHelper
 {
