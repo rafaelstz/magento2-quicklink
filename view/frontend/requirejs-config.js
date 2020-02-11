@@ -9,8 +9,5 @@ var config = {
             quicklink: 'Rafaelcg_Quicklink/js/quicklink.umd',
             polyfillio: 'https://polyfill.io/v2/polyfill.umd.js?features=IntersectionObserver'
         }
-    },
-    deps: {
-        'quicklink': ['jquery']
     }
 };
