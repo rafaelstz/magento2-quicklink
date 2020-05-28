@@ -1,9 +1,10 @@
 <h1 align="center">
   <br>
-    <img src="https://i.imgur.com/d8QEHRb.png" alt="Tradução Magento 2 pt_BR" width="128" height="128" title="Magento2 quicklink"/> 
+    <img src="https://i.imgur.com/d8QEHRb.png" alt="Magento 2 Quicklinks" width="128" height="128" title="Magento2 quicklink"/> 
   <br>
   Magento 2 Quicklink Module
   <br>
+  <img src="https://travis-ci.org/rafaelstz/magento2-quicklink.svg?branch=master" alt="Magento 2 Quicklinks">
 </h1>
 
 #### Faster subsequent page-loads by prefetching in-viewport links during idle time
