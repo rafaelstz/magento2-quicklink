@@ -1,7 +1,7 @@
 <?php
 /**
- *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2019.
+ * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+ * @copyright Copyright (c) 2019.
  */
 
 namespace Rafaelcg\Quicklink\Model\Helper;
@@ -11,8 +11,7 @@ use Magento\Store\Model\ScopeInterface;
 
 /**
  * Class Data
- *
- * @package Rafaelcg\Quicklink\Model\Helper
+ * Get configurations from admin panel
  */
 class Data extends AbstractHelper
 {

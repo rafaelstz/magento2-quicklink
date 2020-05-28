@@ -1,8 +1,9 @@
 {
   "name": "rafaelcg/magento2-quicklink",
   "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time",
+  "homepage": "https://github.com/rafaelstz/magento2-quicklink",
   "require": {
-    "php": "~5.6.0|~7.0.0|~7.1.0|~7.2.0|~7.3.0",
+    "php": "~7.1.0|~7.2.0|~7.3.0",
     "magento/framework": "*",
     "ext-json": "*"
   },
@@ -12,7 +13,11 @@
     "phpmd/phpmd": "^2.6",
     "magento-ecg/coding-standard": ">=3.0",
     "squizlabs/php_codesniffer": "^3.2",
-    "phpcompatibility/php-compatibility": "^9.3"
+    "phpcompatibility/php-compatibility": "^9.3",
+    "magento/magento-coding-standard": "^5.0",
+    "nlubisch/grumphp-easycodingstandard": "^1.1",
+    "wearejust/grumphp-extra-tasks": "^2.2",
+    "jakub-onderka/php-parallel-lint": "^1.0"
   },
   "authors": [
     {
@@ -21,27 +26,40 @@
       "homepage": "https://rafaelcg.com"
     }
   ],
-  "repositories": {
-    "0": {
-      "type": "composer",
-      "url": "https://repo.magento.com/"
+  "keywords": [
+    "magento",
+    "magento2",
+    "performance",
+    "module",
+    "extension"
+  ],
+  "repositories": [
+    {
+        "type": "composer",
+        "url": "https://repo.magento.com/"
     }
-  },
+  ],
   "type": "magento2-module",
   "license": [
     "OSL-3.0"
   ],
   "autoload": {
     "files": [
-      "registration.php"
+      "src/registration.php"
     ],
     "psr-4": {
-      "Rafaelcg\\Quicklink\\": ""
+      "Rafaelcg\\Quicklink\\": "src"
     }
   },
   "scripts": {
-    "php": "vendor/bin/phpcs --standard=./vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,phtml -d memory_limit=-1",
-    "lint": "vendor/bin/phpcs --standard=./vendor/magento-ecg/coding-standard/EcgM2 --extensions=php,phtml -d memory_limit=-1",
-    "fix": "vendor/bin/phpcbf --standard=./vendor/magento-ecg/coding-standard/EcgM2 --extensions=php,phtml -d memory_limit=-1"
+    "post-install-cmd": [
+      "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
+    ],
+    "post-update-cmd": [
+      "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
+    ],
+    "php": "vendor/bin/phpcs --standard=./vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,phtml -d memory_limit=-1 src",
+    "lint": "vendor/bin/phpcs --standard=Magento2 src",
+    "fix": "vendor/bin/phpcbf --standard=Magento2 src"
   }
 }

@@ -11,10 +11,10 @@ $viewModel = $block->getViewModel();
 <script defer>
     require(['jquery', 'quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
         quicklink.listen({
-            <?= $viewModel->getTimeout() ?>
-            <?= $viewModel->getLimit() ?>
-            <?= $viewModel->getConcurrencyLimit() ?>
-            <?= $viewModel->getPriority() ?>
+            <?= $block->escapeHtml($viewModel->getTimeout()) ?>
+            <?= $block->escapeHtml($viewModel->getLimit()) ?>
+            <?= $block->escapeHtml($viewModel->getConcurrencyLimit()) ?>
+            <?= $block->escapeHtml($viewModel->getPriority()) ?>
             ignores: [
                 /\/api\/?/,
                 uri => uri.includes('#'),

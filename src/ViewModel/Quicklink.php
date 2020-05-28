@@ -7,7 +7,7 @@ use Rafaelcg\Quicklink\Model\Helper\Data;
 
 /**
  * Class Quicklink
- * @package Rafaelcg\Quicklink\ViewModel
+ * Provide the data customized by the user via admin
  */
 class Quicklink implements ArgumentInterface
 {

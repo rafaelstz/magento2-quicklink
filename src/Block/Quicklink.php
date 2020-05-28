@@ -1,7 +1,7 @@
 <?php
 /**
- *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2019.
+ * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
+ * @copyright Copyright (c) 2019.
  */
 
 namespace Rafaelcg\Quicklink\Block;
@@ -11,8 +11,7 @@ use Rafaelcg\Quicklink\Model\Helper\Data;
 
 /**
  * Class Quicklink
- *
- * @package Rafaelcg\Quicklink\Block
+ * Initialize the parameters that must be used to start
  */
 class Quicklink extends Template
 {
@@ -87,4 +86,3 @@ class Quicklink extends Template
         return !$this->helper->isQuicklinkEnabled() ? '' : parent::_toHtml();
     }
 }
-

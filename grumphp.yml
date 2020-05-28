@@ -1,4 +1,25 @@
 parameters:
-    git_dir: .
-    bin_dir: vendor/bin
-    tasks: {  }
+  tasks:
+    composer:
+      no_check_all: false
+    git_blacklist:
+      keywords:
+        - "die"
+        - "var_dump("
+        - "exit"
+        - "console.log("
+        - "ObjectManager::getInstance"
+      triggered_by: ['php', 'phtml', 'js']
+    phpdoc: ~
+    phpversion:
+      project: '7.2'
+    phplint:
+      triggered_by: ['php', 'phtml']
+    ecs:
+      whitelist_patterns:
+        - src
+      fix: true
+    xmllint: ~
+    extensions:
+      - Wearejust\GrumPHPExtra\Extension\Loader
+      - NLubisch\GrumPHP\Extension
