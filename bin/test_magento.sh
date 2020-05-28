@@ -30,11 +30,7 @@ cd "magento"
 
 # Require the extension to make it usable (autoloading)
 echo "==> Requiring extension from the $TRAVIS_BRANCH-dev branch"
-composer require --dev "rafaelstz/magento2-quicklink:$TRAVIS_BRANCH-dev" --quiet
-
-# Arbitray copy the pulled build (current travis build) in place of the required one.
-echo "==> Copying the current build to the Magento 2 installation."
-cp -R ../elasticsuite/* vendor/smile/elasticsuite/
+composer require --dev "rafaelcg/magento2-quicklink:$TRAVIS_BRANCH-dev" --quiet
 
 echo "==> Installing Magento 2"
 mysql -uroot -e 'CREATE DATABASE magento2;'
