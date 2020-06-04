@@ -4,6 +4,8 @@
   <br>
   Magento 2 Quicklink Module
   <br>
+  <a href="https://packagist.org/packages/rafaelcg/magento2-quicklink"><img src="https://img.shields.io/packagist/v/rafaelcg/magento2-quicklink.svg" alt="Magento 2 Quicklinks Stable Version"/></a>
+  <a href="https://packagist.org/packages/rafaelcg/magento2-quicklink"><img src="https://img.shields.io/packagist/dt/rafaelcg/magento2-quicklink.svg" alt="Magento 2 Quicklinks Stable Version"/></a>
   <a href="https://travis-ci.org/github/rafaelstz/magento2-quicklink"><img src="https://travis-ci.org/rafaelstz/magento2-quicklink.svg?branch=master" alt="Magento 2 Quicklinks"/></a>
   <a href="https://codeclimate.com/github/rafaelstz/magento2-quicklink/maintainability"><img src="https://api.codeclimate.com/v1/badges/92e9c85f5f0ce91dbc4f/maintainability"  alt="Magento 2 Quicklinks"/></a>
 </h1>
