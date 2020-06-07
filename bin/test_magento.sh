@@ -39,4 +39,5 @@ php bin/magento setup:install -q --admin-user="admin" --admin-password="admin123
 echo "==> Process upgrade and try to compile..."
 php bin/magento setup:upgrade -q
 php bin/magento cache:flush
+php bin/magento setup:static-content:deploy
 php bin/magento setup:di:compile
