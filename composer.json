@@ -4,9 +4,8 @@
     "homepage": "https://github.com/rafaelstz/magento2-quicklink",
     "version": "2.0.4",
     "require": {
-        "php": "~7.1.0|~7.2.0|~7.3.0",
-        "magento/framework": "*",
-        "ext-json": "*"
+        "php": "~7.1|~7.2|~7.3",
+        "magento/framework": "^101.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.2.0",
@@ -42,7 +41,8 @@
     },
     "type": "magento2-module",
     "license": [
-        "OSL-3.0"
+        "OSL-3.0",
+        "AFL-3.0"
     ],
     "autoload": {
         "files": [

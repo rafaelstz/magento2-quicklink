@@ -11,8 +11,6 @@ parameters:
         - "ObjectManager::getInstance"
       triggered_by: ['php', 'phtml', 'js']
     phpdoc: ~
-    phpversion:
-      project: '7.2'
     phplint:
       triggered_by: ['php', 'phtml']
     ecs:
