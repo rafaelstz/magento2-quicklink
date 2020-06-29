@@ -9,7 +9,9 @@
         <quicklink>
             <general>
                 <active>1</active>
-                <timeout>2000</timeout>
+                <timeout>500</timeout>
+                <request_limit>10</request_limit>
+                <concurrency_limit>2</concurrency_limit>
                 <priority>0</priority>
             </general>
         </quicklink>
