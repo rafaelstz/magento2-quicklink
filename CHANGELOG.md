@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.5] - Jun 29 2020
+
+### Added
+- Default config to request_limit and concurrency_limit.
+
+### Changed
+- Default config to timeout.
+
 ## [2.0.4] - Dec 03 2019
 
 ### Fixed
