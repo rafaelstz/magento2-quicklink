@@ -1,13 +1,13 @@
 /*
  *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2019.
+ *  @copyright Copyright (c) 2020.
  */
 
 var config = {
     map: {
         '*': {
-            quicklink: 'Rafaelcg_Quicklink/js/quicklink.umd',
-            polyfillio: 'https://polyfill.io/v2/polyfill.umd.js?features=IntersectionObserver'
+            quicklink: 'https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.0.0/quicklink.umd.js',
+            polyfillio: 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver'
         }
     }
 };

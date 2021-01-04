@@ -1,20 +1,21 @@
 <?php
 /**
  * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- * @copyright Copyright (c) 2019.
+ * @copyright Copyright (c) 2020.
  */
 /** @var $block \Rafaelcg\Quicklink\Block\QuickLink */
 /** @var $viewModel \Rafaelcg\Quicklink\ViewModel\QuickLink */
 $viewModel = $block->getViewModel();
 ?>
 <!-- Google Quicklink -->
-<script defer>
+<script>
     require(['jquery', 'quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
         quicklink.listen({
-            <?= $block->escapeHtml($viewModel->getTimeout()) ?>
-            <?= $block->escapeHtml($viewModel->getLimit()) ?>
-            <?= $block->escapeHtml($viewModel->getConcurrencyLimit()) ?>
-            <?= $block->escapeHtml($viewModel->getPriority()) ?>
+            <?php
+            echo $block->escapeHtml($viewModel->getTimeout());
+            echo $block->escapeHtml($viewModel->getLimit());
+            echo $block->escapeHtml($viewModel->getConcurrencyLimit());
+            echo $block->escapeHtml($viewModel->getPriority()); ?>
             ignores: [
                 /\/api\/?/,
                 uri => uri.includes('#'),
