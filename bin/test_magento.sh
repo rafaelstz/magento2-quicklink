@@ -41,3 +41,8 @@ php bin/magento setup:upgrade -q
 php bin/magento cache:flush
 php bin/magento setup:static-content:deploy
 php bin/magento setup:di:compile
+
+echo "==> Enable Apache configuration"
+sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
+sudo service apache2 restart
+sleep 2
