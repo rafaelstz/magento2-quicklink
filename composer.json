@@ -2,10 +2,10 @@
     "name": "rafaelcg/magento2-quicklink",
     "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time",
     "homepage": "https://github.com/rafaelstz/magento2-quicklink",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "require": {
-        "php": "~7.1|~7.2|~7.3",
-        "magento/framework": "^101.0"
+        "php": "~7.1.0|~7.2.0|~7.3.0|~7.4.0",
+        "magento/framework": "~101.0.0|~102.0.0|~103.0.0"
     },
     "require-dev": {
         "magento/magento-coding-standard": "^5.0",
@@ -31,12 +31,12 @@
         "module",
         "extension"
     ],
-    "repositories": {
-        "0": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://repo.magento.com/"
         }
-    },
+    ],
     "type": "magento2-module",
     "license": [
         "OSL-3.0",
@@ -44,10 +44,10 @@
     ],
     "autoload": {
         "files": [
-            "src/registration.php"
+            "registration.php"
         ],
         "psr-4": {
-            "Rafaelcg\\Quicklink\\": "src"
+            "Rafaelcg\\Quicklink\\": ""
         }
     },
     "scripts": {
@@ -57,8 +57,8 @@
         "post-update-cmd": [
             "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
         ],
-        "php": "vendor/bin/phpcs --standard=./vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,phtml -d memory_limit=-1 src",
-        "lint": "vendor/bin/phpcs --standard=Magento2 src",
-        "fix": "vendor/bin/phpcbf --standard=Magento2 src"
+        "php": "vendor/bin/phpcs --standard=./vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,phtml --ignore=vendor -d memory_limit=-1 .",
+        "lint": "vendor/bin/phpcs --standard=Magento2 --ignore=vendor .",
+        "fix": "vendor/bin/phpcbf --standard=Magento2 --ignore=vendor ."
     }
 }

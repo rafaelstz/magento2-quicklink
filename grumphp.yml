@@ -16,8 +16,6 @@ parameters:
         phplint:
             triggered_by: [ 'php', 'phtml' ]
         ecs:
-            whitelist_patterns:
-                - src
             fix: true
         xmllint: ~
         extensions:
