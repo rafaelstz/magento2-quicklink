@@ -82,7 +82,7 @@
           file_extensions: php
           ignore-undeclared: true
     exclude_patterns:
-      - "src/*/Test"
-      - "src/*/Setup/*Setup.php"
+      - "*/Test"
+      - "*/Setup/*Setup.php"
       - "vendor/*"
       - "Resources/*"

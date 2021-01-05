@@ -52,4 +52,4 @@ cache:
 script:
   - ./bin/test_magento.sh
   - vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/
-  - vendor/bin/phpcs --standard=Magento2 --severity=9 src/
+  - vendor/bin/phpcs --standard=Magento2 --severity=9 --ignore='.git,vendor' ./

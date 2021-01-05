@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.6] - Jan 01 2021
+
+### Added
+- Support to Magento 2.4
+- Quicklink 2.0 via CDN
+
 ## [2.0.5] - Jun 29 2020
 
 ### Added
