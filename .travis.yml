@@ -16,11 +16,11 @@ jobs:
       php: 7.3
       env:
         - MAGENTO_VERSION=2.3.6 MAGENTO_EDITION=enterprise ES_VERSION=6.8.8
-    - php: 7.4
+    - php: 7.3
       env:
           - MAGENTO_VERSION=2.4.1 MAGENTO_EDITION=community ES_VERSION=7.6.2-amd64
     - if: type != pull_request
-      php: 7.4
+      php: 7.3
       env:
           - MAGENTO_VERSION=2.4.1 MAGENTO_EDITION=enterprise ES_VERSION=7.6.2-amd64
 
