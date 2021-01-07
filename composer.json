@@ -2,7 +2,7 @@
     "name": "rafaelcg/magento2-quicklink",
     "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time",
     "homepage": "https://github.com/rafaelstz/magento2-quicklink",
-    "version": "2.0.6",
+    "version": "2.0.7",
     "require": {
         "php": "~7.1.0|~7.2.0|~7.3.0|~7.4.0",
         "magento/framework": "~101.0.0|~102.0.0|~103.0.0"
