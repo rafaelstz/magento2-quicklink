@@ -3,7 +3,7 @@
  *  @copyright Copyright (c) 2020.
  */
 
-define(['jquery', 'magento2-quicklink/view/frontend/web/js/quicklink', 'polyfillio', 'domReady!'],
+define(['jquery', 'quicklink', 'polyfillio', 'domReady!'],
     function ($, quicklink) {
         'use strict';
 
