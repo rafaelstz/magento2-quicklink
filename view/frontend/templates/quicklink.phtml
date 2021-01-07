@@ -9,7 +9,7 @@ $viewModel = $block->getViewModel();
 ?>
 <!-- Google Quicklink -->
 <script>
-    require(['jquery', 'magento2-quicklink/view/frontend/templates/quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
+    require(['jquery', 'quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
         quicklink.listen({
             <?php
             echo $block->escapeHtml($viewModel->getTimeout());
