@@ -59,6 +59,14 @@
                     </depends>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="developer_mode" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Run in developer mode</label>
+                    <comment>Running just in production mode avoid to request extra pages with no static files generated yet.</comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
         </section>
     </system>

@@ -6,6 +6,7 @@
 
 namespace Rafaelcg\Quicklink\Block;
 
+use Magento\Framework\App\State;
 use Magento\Framework\View\Element\Template;
 use Rafaelcg\Quicklink\Model\Helper\Data;
 
@@ -34,23 +35,26 @@ class Quicklink extends Template
      *
      * @param Template\Context $context
      * @param Data $helper
+     * @param State $appState
      * @param array $data
      */
     public function __construct(
         Template\Context $context,
         Data $helper,
+        State $appState,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->context = $context;
-        $this->data = $data;
         $this->helper = $helper;
+        $this->_appState = $appState;
+        $this->data = $data;
     }
 
     /**
      * Initialize the configurations
      *
-     * @return string
+     * @return array|string
      */
     public function initConfig()
     {
@@ -76,6 +80,10 @@ class Quicklink extends Template
         return ($initConfig);
     }
 
+    protected function runInDeveloperMode(){
+        return $this->helper->getRunInDeveloperMode();
+    }
+
     /**
      * Render GA tracking scripts
      *
@@ -83,6 +91,13 @@ class Quicklink extends Template
      */
     protected function _toHtml()
     {
-        return !$this->helper->isQuicklinkEnabled() ? '' : parent::_toHtml();
+        $isProductionMode = $this->_appState->getMode() === State::MODE_PRODUCTION;
+        $runInDeveloperMode = $this->helper->runInDeveloperMode();
+        if(!$this->helper->isQuicklinkEnabled()){
+            if(!$runInDeveloperMode && !$isProductionMode) {
+                return '';
+            }
+        }
+        return parent::_toHtml();
     }
 }

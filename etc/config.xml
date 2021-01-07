@@ -13,6 +13,7 @@
                 <request_limit>10</request_limit>
                 <concurrency_limit>2</concurrency_limit>
                 <priority>0</priority>
+                <developer_mode>0</developer_mode>
             </general>
         </quicklink>
     </default>
