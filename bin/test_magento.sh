@@ -37,9 +37,10 @@ mysql -uroot -e 'CREATE DATABASE magento2;'
 php bin/magento setup:install -q --admin-user="admin" --admin-password="admin123" --admin-email="admin@example.com" --admin-firstname="Admin" --admin-lastname="User" --db-name="magento2"
 
 echo "==> Process upgrade and try to compile..."
+php bin/magento deploy:mode:set production -s
 php bin/magento setup:upgrade -q
 php bin/magento cache:flush
-php bin/magento setup:static-content:deploy
+php bin/magento setup:static-content:deploy -f
 php bin/magento setup:di:compile
 
 echo "==> Enable Apache configuration"
