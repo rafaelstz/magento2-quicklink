@@ -1,0 +1,15 @@
+"Faster subsequent page-loads by prefetching in-viewport links during idle time.<br>
+                If you have any issue, please <a title=""report issue"" target=""_blank"" href=""https://github.com/rafaelstz/magento2-quicklink/issues"">report here</a>.","Cargas de página posteriores más rápidas mediante la obtención previa de enlaces en la ventana gráfica durante el tiempo de inactividad.<br>
+                Si tiene algún problema, por favor <a title=""report issue"" target=""_blank"" href=""https://github.com/rafaelstz/magento2-quicklink/issues"">informe aquí/a>."
+"Rafaelcg Extensions","Rafaelcg Extensiones"
+"Defaults to 2 seconds (e.g. 2000)","El valor predeterminado es 2 segundos (por ejemplo, 2000)"
+"Enable","Habilitar"
+"Timeout limit in milliseconds.","Límite de tiempo de espera en milisegundos."
+"Request limit","Límite de solicitud"
+"The total requests that can be prefetched.","El total de solicitudes que se pueden obtener el prefetch."
+"Throttle","Acelerador"
+"The concurrency limit for simultaneous requests.","El límite de simultaneidad para solicitudes simultáneas."
+"High Priority","Alta prioridad"
+"Whether or not the URLs should be treated as high priority.","Si las URL deben tratarse o no como una prioridad alta."
+"Run in developer mode","Ejecutar en modo developer"
+"Running just in production mode avoid to request extra pages with no static files generated yet.","La ejecución en modo de producción solo evita realizar solicitudes de otras páginas sin generar archivos estáticos."
