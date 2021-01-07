@@ -11,8 +11,7 @@ $viewModel = $block->getViewModel();
 <script>
     require(['jquery', 'quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
         quicklink.listen({
-            <?php
-            echo $block->escapeHtml($viewModel->getTimeout());
+            <?= $block->escapeHtml($viewModel->getTimeout());
             echo $block->escapeHtml($viewModel->getLimit());
             echo $block->escapeHtml($viewModel->getConcurrencyLimit());
             echo $block->escapeHtml($viewModel->getPriority()); ?>

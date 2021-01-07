@@ -80,7 +80,8 @@ class Quicklink extends Template
         return ($initConfig);
     }
 
-    protected function runInDeveloperMode(){
+    protected function runInDeveloperMode()
+    {
         return $this->helper->getRunInDeveloperMode();
     }
 
@@ -93,8 +94,8 @@ class Quicklink extends Template
     {
         $isProductionMode = $this->_appState->getMode() === State::MODE_PRODUCTION;
         $runInDeveloperMode = $this->helper->runInDeveloperMode();
-        if(!$this->helper->isQuicklinkEnabled()){
-            if(!$runInDeveloperMode && !$isProductionMode) {
+        if (!$this->helper->isQuicklinkEnabled()) {
+            if (!$runInDeveloperMode && !$isProductionMode) {
                 return '';
             }
         }
