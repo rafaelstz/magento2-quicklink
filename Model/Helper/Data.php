@@ -23,6 +23,7 @@ class Data extends AbstractHelper
     const XML_PATH_REQUEST_LIMIT = 'quicklink/general/request_limit';
     const XML_PATH_CONCURRENCY_LIMIT = 'quicklink/general/concurrency_limit';
     const XML_PATH_PRIORITY = 'quicklink/general/priority';
+    const XML_PATH_DEVELOPER_MODE = 'quicklink/general/developer_mode';
 
     /**
      * Get config
@@ -80,11 +81,22 @@ class Data extends AbstractHelper
     /**
      * Whether Quicklink is ready to use
      *
-     * @param  string $store
+     * @param null $store
      * @return bool
      */
     public function isQuicklinkEnabled($store = null)
     {
         return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, ScopeInterface::SCOPE_STORE, $store);
+    }
+
+    /**
+     * Check if can run in developer mode
+     *
+     * @param null $store
+     * @return bool
+     */
+    public function runInDeveloperMode($store = null)
+    {
+        return $this->scopeConfig->isSetFlag(self::XML_PATH_DEVELOPER_MODE, ScopeInterface::SCOPE_STORE, $store);
     }
 }

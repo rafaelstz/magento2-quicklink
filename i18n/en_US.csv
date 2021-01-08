@@ -1,0 +1,18 @@
+"Rafaelcg Quicklink","Rafaelcg Quicklink"
+"Rafaelcg Extensions","Rafaelcg Extensions"
+"Google Quicklink","Google Quicklink"
+"Faster subsequent page-loads by prefetching in-viewport links during idle time.<br>
+                If you have any issue, please <a title=""report issue"" target=""_blank"" href=""https://github.com/rafaelstz/magento2-quicklink/issues"">report here</a>.","Faster subsequent page-loads by prefetching in-viewport links during idle time.<br>
+                If you have any issue, please <a title=""report issue"" target=""_blank"" href=""https://github.com/rafaelstz/magento2-quicklink/issues"">report here</a>."
+Enable,Enable
+Timeout,Timeout
+"Timeout limit in milliseconds.","Timeout limit in milliseconds."
+"Request limit","Request limit"
+"The total requests that can be prefetched.","The total requests that can be prefetched."
+Throttle,Throttle
+"The concurrency limit for simultaneous requests.","The concurrency limit for simultaneous requests."
+"High Priority","High Priority"
+"Whether or not the URLs should be treated as high priority.","Whether or not the URLs should be treated as high priority."
+Dictionary successfully processed.
+"Run in developer mode","Run in developer mode"
+"Running just in production mode avoid to request extra pages with no static files generated yet.","Running just in production mode avoid to request extra pages with no static files generated yet."
