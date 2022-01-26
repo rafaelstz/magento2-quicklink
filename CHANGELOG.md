@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.1.1] - Jan 26 2022
+
+- 🐛 Avoid external links to minify in [#14](https://github.com/rafaelstz/magento2-quicklink/pull/14).
+
 ## [2.0.6] - Jan 01 2021
 
 ### Added
