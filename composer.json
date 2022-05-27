@@ -2,21 +2,19 @@
     "name": "rafaelcg/magento2-quicklink",
     "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time",
     "homepage": "https://github.com/rafaelstz/magento2-quicklink",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "require": {
-        "php": "~7.1.0|~7.2.0|~7.3.0|~7.4.0",
-        "magento/framework": "~101.0.0|~102.0.0|~103.0.0"
+        "php": "~7.4.0||~8.1.0",
+        "magento/framework": "~103.0.0||~104.0.0"
     },
     "require-dev": {
         "magento/magento-coding-standard": "^5.0",
         "friendsofphp/php-cs-fixer": "^2.2.0",
-        "phpro/grumphp": "^0.14.0",
         "phpmd/phpmd": "^2.6",
-        "squizlabs/php_codesniffer": "^3.2",
-        "nlubisch/grumphp-easycodingstandard": "^1.1",
-        "wearejust/grumphp-extra-tasks": "^2.2",
-        "jakub-onderka/php-parallel-lint": "^1.0"
+        "phpcompatibility/php-compatibility": "*",
+        "squizlabs/php_codesniffer": "^3.2"
     },
+    "prefer-stable" : true,
     "authors": [
         {
             "name": "Rafael Correa Gomes",
@@ -52,12 +50,14 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
+            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)",
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
         ],
         "post-update-cmd": [
-            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)"
+            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)",
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
         ],
-        "php": "vendor/bin/phpcs --standard=./vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,phtml --ignore=vendor -d memory_limit=-1 .",
+        "php": "vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php,phtml --ignore=vendor -d memory_limit=-1",
         "lint": "vendor/bin/phpcs --standard=Magento2 --ignore=vendor .",
         "fix": "vendor/bin/phpcbf --standard=Magento2 --ignore=vendor ."
     }
