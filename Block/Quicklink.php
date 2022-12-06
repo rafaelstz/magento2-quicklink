@@ -77,7 +77,7 @@ class Quicklink extends Template
             $initConfig['priority'] = $priority;
         }
 
-        return ($initConfig);
+        return $initConfig;
     }
 
     protected function runInDeveloperMode()

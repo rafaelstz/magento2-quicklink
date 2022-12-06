@@ -41,7 +41,7 @@ class Quicklink implements ArgumentInterface
     public function getLimit()
     {
         $config = $this->helper->getRequestLimit();
-        return $config ? "priority: {$config}," : "";
+        return $config ? "limit: {$config}," : "";
     }
 
     /**
