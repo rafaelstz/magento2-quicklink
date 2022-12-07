@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
   ~  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
-  ~  @copyright Copyright (c) 2020.
+  ~  @copyright Copyright (c) 2023.
   -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
     <acl>

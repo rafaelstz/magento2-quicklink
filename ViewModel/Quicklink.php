@@ -18,6 +18,7 @@ class Quicklink implements ArgumentInterface
 
     /**
      * Quicklink constructor.
+     *
      * @param Data $helper
      */
     public function __construct(
@@ -27,6 +28,8 @@ class Quicklink implements ArgumentInterface
     }
 
     /**
+     * Get timeout before cancelling the request
+     *
      * @return string
      */
     public function getTimeout()
@@ -36,6 +39,8 @@ class Quicklink implements ArgumentInterface
     }
 
     /**
+     * Get the maximum number of requests to be made
+     *
      * @return string
      */
     public function getLimit()
@@ -45,6 +50,8 @@ class Quicklink implements ArgumentInterface
     }
 
     /**
+     * Get the maximum number of requests to be made at the same time
+     *
      * @return string
      */
     public function getConcurrencyLimit()
@@ -54,6 +61,8 @@ class Quicklink implements ArgumentInterface
     }
 
     /**
+     * Get the priority of the request
+     *
      * @return string
      */
     public function getPriority()
