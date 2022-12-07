@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file.
 ## [2.0.4] - Dec 03 2019
 
 ### Fixed
-- Not prefetch non-cacheble pages.
+- Not prefetch non-cacheable pages.
 
 ## [2.0.3] - Jul 19 2019
 
