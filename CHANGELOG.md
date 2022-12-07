@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.2.1] - Dec 07 2022
+
+- 🐛 limit config and minor changes by @rangerz in https://github.com/rafaelstz/magento2-quicklink/pull/16
+-  🐛 Avoid running it in development mode by @rafaelstz in https://github.com/rafaelstz/magento2-quicklink/pull/22
+-  🤖 [Travis] Upgrade Magento 2.4.1 to 2.4.5 by @rafaelstz in https://github.com/rafaelstz/magento2-quicklink/pull/21
+-  ✨ Upgrade and test on M2.4.5 by @rafaelstz in https://github.com/rafaelstz/magento2-quicklink/pull/24
+-  🐛 Ignoring `catalogsearch` by @rafaelstz in https://github.com/rafaelstz/magento2-quicklink/pull/23
+-  🐛 PHPCS + Composer upgrade by @rafaelstz in https://github.com/rafaelstz/magento2-quicklink/pull/26
+
 ## [2.1.1] - May 27 2022
 
 - 🐛 Support to Magento 2.4.4

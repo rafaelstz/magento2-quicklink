@@ -46,43 +46,12 @@ class Quicklink extends Template
         array $data = []
     ) {
         parent::__construct($context, $data);
-        $this->context = $context;
         $this->helper = $helper;
         $this->_appState = $appState;
-        $this->data = $data;
     }
 
     /**
-     * Initialize the configurations
-     *
-     * @return array|string
-     */
-    public function initConfig(): array|string
-    {
-        $initConfig = [];
-        $timeout = $this->helper->getTimeout();
-        $requestLimit = $this->helper->getRequestLimit();
-        $concurrencyLimit = $this->helper->getConcurrencyLimit();
-        $priority = $this->helper->getPriority();
-
-        if ($timeout) {
-            $initConfig['timeout'] = $timeout;
-        }
-        if ($requestLimit) {
-            $initConfig['limit'] = $requestLimit;
-        }
-        if ($concurrencyLimit) {
-            $initConfig['throttle'] = $concurrencyLimit;
-        }
-        if ($priority) {
-            $initConfig['priority'] = $priority;
-        }
-
-        return $initConfig;
-    }
-
-    /**
-     * Render GA tracking scripts
+     * Render Quicklink script
      *
      * @return string
      */
@@ -90,7 +59,8 @@ class Quicklink extends Template
     {
         $isProductionMode = $this->_appState->getMode() === State::MODE_PRODUCTION;
         $runInDeveloperMode = $this->helper->runInDeveloperMode();
-        if (!$runInDeveloperMode && !$isProductionMode) {
+        if (!$this->helper->isQuicklinkEnabled() ||
+            (!$runInDeveloperMode && !$isProductionMode)) {
             return '';
         }
         return parent::_toHtml();

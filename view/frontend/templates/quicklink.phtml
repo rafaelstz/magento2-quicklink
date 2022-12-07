@@ -9,12 +9,12 @@ $viewModel = $block->getViewModel();
 ?>
 <!-- Google Quicklink -->
 <script>
-    require(['jquery', 'quicklink', 'polyfillio', 'domReady!'], function($, quicklink) {
+    require(['quicklink', 'polyfillio', 'domReady!'], function(quicklink) {
         quicklink.listen({
-            <?= $block->escapeHtml($viewModel->getTimeout());
-            echo $block->escapeHtml($viewModel->getLimit());
-            echo $block->escapeHtml($viewModel->getConcurrencyLimit());
-            echo $block->escapeHtml($viewModel->getPriority()); ?>
+            <?= $block->escapeHtml($viewModel->getTimeout()) ?>
+            <?= $block->escapeHtml($viewModel->getLimit()) ?>
+            <?= $block->escapeHtml($viewModel->getConcurrencyLimit()) ?>
+            <?= $block->escapeHtml($viewModel->getPriority()) ?>
             ignores: [
                 /\/api\/?/,
                 uri => uri.includes('#'),
