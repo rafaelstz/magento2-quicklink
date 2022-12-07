@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- * @copyright Copyright (c) 2020.
+ * @copyright Copyright (c) 2023.
  */
 
 namespace Rafaelcg\Quicklink\Model\Helper;
@@ -32,7 +32,7 @@ class Data extends AbstractHelper
      * @param  null   $scopeCode
      * @return mixed
      */
-    public function getConfig($path, $scopeCode = null)
+    public function getConfig($path, $scopeCode = null): mixed
     {
         $config = $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE, $scopeCode);
         return !empty($config) ? $config : false;
@@ -43,7 +43,7 @@ class Data extends AbstractHelper
      *
      * @return int|mixed
      */
-    public function getTimeout()
+    public function getTimeout(): mixed
     {
         return $this->getConfig(self::XML_PATH_TIMEOUT);
     }
@@ -53,7 +53,7 @@ class Data extends AbstractHelper
      *
      * @return int|mixed
      */
-    public function getRequestLimit()
+    public function getRequestLimit(): mixed
     {
         return $this->getConfig(self::XML_PATH_REQUEST_LIMIT);
     }
@@ -63,7 +63,7 @@ class Data extends AbstractHelper
      *
      * @return int|mixed
      */
-    public function getConcurrencyLimit()
+    public function getConcurrencyLimit(): mixed
     {
         return $this->getConfig(self::XML_PATH_CONCURRENCY_LIMIT);
     }
@@ -73,7 +73,7 @@ class Data extends AbstractHelper
      *
      * @return int|mixed
      */
-    public function getPriority()
+    public function getPriority(): mixed
     {
         return $this->getConfig(self::XML_PATH_PRIORITY);
     }
@@ -81,21 +81,22 @@ class Data extends AbstractHelper
     /**
      * Whether Quicklink is ready to use
      *
+     * @deprecated 2.2.0
      * @param null $store
      * @return bool
      */
-    public function isQuicklinkEnabled($store = null)
+    public function isQuicklinkEnabled($store = null): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, ScopeInterface::SCOPE_STORE, $store);
     }
 
     /**
-     * Check if can run in developer mode
+     * Check if you can run it in developer mode
      *
      * @param null $store
      * @return bool
      */
-    public function runInDeveloperMode($store = null)
+    public function runInDeveloperMode($store = null): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_PATH_DEVELOPER_MODE, ScopeInterface::SCOPE_STORE, $store);
     }
