@@ -18,12 +18,12 @@ class Data extends AbstractHelper
     /**
      * Config paths for using throughout the code
      */
-    const XML_PATH_ACTIVE = 'quicklink/general/active';
-    const XML_PATH_TIMEOUT = 'quicklink/general/timeout';
-    const XML_PATH_REQUEST_LIMIT = 'quicklink/general/request_limit';
-    const XML_PATH_CONCURRENCY_LIMIT = 'quicklink/general/concurrency_limit';
-    const XML_PATH_PRIORITY = 'quicklink/general/priority';
-    const XML_PATH_DEVELOPER_MODE = 'quicklink/general/developer_mode';
+    public const XML_PATH_ACTIVE = 'quicklink/general/active';
+    public const XML_PATH_TIMEOUT = 'quicklink/general/timeout';
+    public const XML_PATH_REQUEST_LIMIT = 'quicklink/general/request_limit';
+    public const XML_PATH_CONCURRENCY_LIMIT = 'quicklink/general/concurrency_limit';
+    public const XML_PATH_PRIORITY = 'quicklink/general/priority';
+    public const XML_PATH_DEVELOPER_MODE = 'quicklink/general/developer_mode';
 
     /**
      * Get config
@@ -81,11 +81,12 @@ class Data extends AbstractHelper
     /**
      * Whether Quicklink is ready to use
      *
-     * @deprecated 2.2.0
-     * @param null $store
+     * @param int|string|null $store
      * @return bool
+     * @deprecated 2.2.0
+     * @see Rafaelcg/Quicklink/view/frontend/layout/default.xml
      */
-    public function isQuicklinkEnabled($store = null): bool
+    public function isQuicklinkEnabled(int|string $store = null): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, ScopeInterface::SCOPE_STORE, $store);
     }
@@ -93,10 +94,10 @@ class Data extends AbstractHelper
     /**
      * Check if you can run it in developer mode
      *
-     * @param null $store
+     * @param int|string|null $store
      * @return bool
      */
-    public function runInDeveloperMode($store = null): bool
+    public function runInDeveloperMode(int|string $store = null): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_PATH_DEVELOPER_MODE, ScopeInterface::SCOPE_STORE, $store);
     }
