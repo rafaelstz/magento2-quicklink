@@ -1,13 +1,5 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Rafaelcg_Quicklink" setup_version="2.1.0">
-        <sequence>
-            <module name="Magento_Cms"/>
-            <module name="Magento_Config"/>
-            <module name="Magento_Cookie"/>
-            <module name="Magento_Store"/>
-            <module name="Magento_Theme"/>
-        </sequence>
-    </module>
+    <module name="Rafaelcg_Quicklink" setup_version="2.1.0"/>
 </config>
