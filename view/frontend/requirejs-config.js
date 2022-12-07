@@ -1,6 +1,6 @@
 /*
  *  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- *  @copyright Copyright (c) 2020.
+ *  @copyright Copyright (c) 2023.
  */
 
 var config = {

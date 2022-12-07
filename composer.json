@@ -2,13 +2,13 @@
     "name": "rafaelcg/magento2-quicklink",
     "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time",
     "homepage": "https://github.com/rafaelstz/magento2-quicklink",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "require": {
         "php": "~7.4.0||~8.1.0",
         "magento/framework": "~103.0.0||~104.0.0"
     },
     "require-dev": {
-        "magento/magento-coding-standard": "^5.0",
+        "magento/magento-coding-standard": "^27",
         "friendsofphp/php-cs-fixer": "^2.2.0",
         "phpmd/phpmd": "^2.6",
         "phpcompatibility/php-compatibility": "*",
@@ -50,15 +50,20 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)",
-            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/,../../phpcompatibility/php-compatibility)"
         ],
         "post-update-cmd": [
-            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/)",
-            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+            "([ $COMPOSER_DEV_MODE -eq 0 ] || vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/,../../phpcompatibility/php-compatibility)"
         ],
         "php": "vendor/bin/phpcs -p . --standard=PHPCompatibility --extensions=php,phtml --ignore=vendor -d memory_limit=-1",
         "lint": "vendor/bin/phpcs --standard=Magento2 --ignore=vendor .",
         "fix": "vendor/bin/phpcbf --standard=Magento2 --ignore=vendor ."
+    },
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true
+        }
     }
 }

@@ -1,13 +1,14 @@
-<?xml version="1.0"?><!--
+<?xml version="1.0"?>
+<!--
   ~  @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
-  ~  @copyright Copyright (c) 2020.
+  ~  @copyright Copyright (c) 2023.
   -->
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="before.body.end">
             <block class="Rafaelcg\Quicklink\Block\Quicklink" after="-" name="quicklink"
-                   template="Rafaelcg_Quicklink::quicklink.phtml">
+                   template="Rafaelcg_Quicklink::quicklink.phtml" ifconfig="quicklink/general/active">
                 <arguments>
                     <argument name="view_model" xsi:type="object">Rafaelcg\Quicklink\ViewModel\Quicklink</argument>
                 </arguments>

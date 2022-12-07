@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- * @copyright Copyright (c) 2020.
+ * @copyright Copyright (c) 2023.
  */
 /** @var $block \Rafaelcg\Quicklink\Block\QuickLink */
 /** @var $viewModel \Rafaelcg\Quicklink\ViewModel\QuickLink */
@@ -18,9 +18,10 @@ $viewModel = $block->getViewModel();
             ignores: [
                 /\/api\/?/,
                 uri => uri.includes('#'),
-                uri => uri.includes('logout'),
                 uri => uri.includes('account'),
+                uri => uri.includes('catalogsearch'),
                 uri => uri.includes('checkout'),
+                uri => uri.includes('logout'),
                 (uri, elem) => elem.hasAttribute('noprefetch')
             ]
         });
