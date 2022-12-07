@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
   ~ @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
-  ~ @copyright (c) 2020.
+  ~ @copyright (c) 2023.
   -->
 
 <csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
