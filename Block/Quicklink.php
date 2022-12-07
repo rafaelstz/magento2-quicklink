@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Rafael Corrêa Gomes <rafaelcgstz@gmail.com>
- * @copyright Copyright (c) 2020.
+ * @copyright Copyright (c) 2023.
  */
 
 namespace Rafaelcg\Quicklink\Block;
@@ -16,19 +16,11 @@ use Rafaelcg\Quicklink\Model\Helper\Data;
  */
 class Quicklink extends Template
 {
+    private Template\Context $context;
 
-    /**
-     * @var Template\Context
-     */
-    private $context;
-    /**
-     * @var array
-     */
-    private $data;
-    /**
-     * @var Data
-     */
-    private $helper;
+    private array $data;
+
+    private Data $helper;
 
     /**
      * Constructor
@@ -56,7 +48,7 @@ class Quicklink extends Template
      *
      * @return array|string
      */
-    public function initConfig()
+    public function initConfig(): array|string
     {
         $initConfig = [];
         $timeout = $this->helper->getTimeout();
@@ -80,24 +72,17 @@ class Quicklink extends Template
         return $initConfig;
     }
 
-    protected function runInDeveloperMode()
-    {
-        return $this->helper->getRunInDeveloperMode();
-    }
-
     /**
      * Render GA tracking scripts
      *
      * @return string
      */
-    protected function _toHtml()
+    protected function _toHtml(): string
     {
         $isProductionMode = $this->_appState->getMode() === State::MODE_PRODUCTION;
         $runInDeveloperMode = $this->helper->runInDeveloperMode();
-        if (!$this->helper->isQuicklinkEnabled()) {
-            if (!$runInDeveloperMode && !$isProductionMode) {
-                return '';
-            }
+        if (!$runInDeveloperMode && !$isProductionMode) {
+            return '';
         }
         return parent::_toHtml();
     }
