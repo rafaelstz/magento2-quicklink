@@ -9,20 +9,20 @@ language: php
 
 jobs:
   include:
-    - php: 7.3
+    - php: 7.4
       env:
-        - MAGENTO_VERSION=2.3.6 MAGENTO_EDITION=community ES_VERSION=6.8.8
+        - MAGENTO_VERSION=2.4.3 MAGENTO_EDITION=community ES_VERSION=7.16-amd64
     - if: type != pull_request
-      php: 7.3
+      php: 7.4
       env:
-        - MAGENTO_VERSION=2.3.6 MAGENTO_EDITION=enterprise ES_VERSION=6.8.8
-    - php: 7.3
+        - MAGENTO_VERSION=2.4.3 MAGENTO_EDITION=enterprise ES_VERSION=7.16-amd64
+    - php: 8.1
       env:
-          - MAGENTO_VERSION=2.4.1 MAGENTO_EDITION=community ES_VERSION=7.6.2-amd64
+          - MAGENTO_VERSION=2.4.5 MAGENTO_EDITION=community ES_VERSION=7.17-amd64
     - if: type != pull_request
-      php: 7.3
+      php: 8.1
       env:
-          - MAGENTO_VERSION=2.4.1 MAGENTO_EDITION=enterprise ES_VERSION=7.6.2-amd64
+          - MAGENTO_VERSION=2.4.5 MAGENTO_EDITION=enterprise ES_VERSION=7.17-amd64
 
 before_install:
   - sudo service elasticsearch stop
