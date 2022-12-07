@@ -16,10 +16,19 @@ use Rafaelcg\Quicklink\Model\Helper\Data;
  */
 class Quicklink extends Template
 {
+    /**
+     * @var Template\Context
+     */
     private Template\Context $context;
 
+    /**
+     * @var array
+     */
     private array $data;
 
+    /**
+     * @var Data
+     */
     private Data $helper;
 
     /**
